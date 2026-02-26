@@ -1,0 +1,246 @@
+/* full height for html and body */
+html,body{
+    height:100%;
+}
+
+/* body styling */
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background: darkcyan;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* dark and light background text for body */
+.dark{
+    background:#1f2530;
+    color:#eaeaea;
+}
+
+/* main container that holds the whole app */
+.container{
+    width:100%;
+    max-width:720px;
+    height:85vh;
+    background:rgb(16, 81, 81);
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.12);
+    display:flex;
+    flex-direction:column;
+}
+
+/* dark button background */
+.dark .container{
+    background:#2b3140;
+}
+
+/* center the todo list title */
+h2{
+    text-align:center;
+    margin-bottom:18px;
+    color: white;
+}
+
+/* layout for task input row */
+.inputSection{
+    display:grid;
+    grid-template-columns:2fr 1.3fr auto;
+    gap:10px;
+    margin-bottom:14px;
+}
+
+/* input - padding,border and font-styling */
+input{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:14px;
+}
+
+/* dark background with light text */
+.dark input{
+    background:#3a4152;
+    color:white;
+    border-color:#555;
+}
+
+/* default style for all buttons */
+button{
+    padding:10px 14px;
+    border:none;
+    background:#355f7d;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* dark shade on hover */
+button:hover{
+    background:#27485e;
+}
+
+/* filter buttons */
+.filterSection{
+    display:flex;
+    gap:10px;
+    margin-bottom:10px;
+    flex-wrap:wrap;
+}
+
+/* highlight selected filter button */
+.filterSection button.active{
+    background:#27485e;
+}
+
+/* scrollable area for task lists */
+.taskContainer{
+    flex:1;
+    overflow-y:auto;
+    padding-right:6px;
+}
+
+/* remove default list spacing */
+ul{
+    padding:0;
+    margin:0;
+}
+
+/* individual task */
+li{
+    list-style:none;
+    padding:12px;
+    background:#f5f6f7;
+    margin-bottom:10px;
+    border-radius:8px;
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:12px;
+    align-items:start;
+}
+
+/* dark mode task item */
+.dark li{
+    background:#3a4152;
+    color:#f1f1f1;
+}
+
+/* task text and dates present in column */
+.leftPart{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+/* checkbox and tasktext side by side */
+.taskRow{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+}
+
+/* fixed size for checkbox */
+input[type="checkbox"]{
+    width:16px;
+    height:16px;
+    accent-color: green;
+    cursor: pointer;
+}
+
+/* strike through and green color completed task */
+.completed{
+    text-decoration:line-through;
+    color:#2e8b57;
+}
+
+/* lighter green for dark background */
+.dark .completed{
+    color:#7CFC9A;
+}
+
+/* small red date text below task */
+.date{
+    font-size:12px;
+    color:#d33;
+}
+
+/* lighter red for dark background */
+.dark .date{
+    color:#ff9d9d;
+}
+
+/* priority label */
+.priority{
+    padding:3px 8px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:bold;
+    width:fit-content;
+}
+
+/* light mode */
+.high{background:#ffd5d5;color:#8b0000;}
+.medium{background:#ffe8b5;color:#8a5a00;}
+.low{background:#d7f5dc;color:#0b6b2d;}
+
+/* dark mode */
+.dark .high{background:#5a1f1f;color:#ffb3b3;}
+.dark .medium{background:#5a4a1f;color:#ffe08a;}
+.dark .low{background:#1f5a2c;color:#8affb0;}
+
+/* column for edit/delete per task */
+.actions{
+    display:flex;
+    gap:6px;
+}
+
+/* background and width of edit/delete button */
+.actions button{
+    width:72px;
+    background:#6b7280;
+}
+
+/* red background for delete */
+.delete{
+    background:#d64545;
+}
+
+/* inline input field when editing a task */
+.editInput{
+    padding:5px;
+    border:1px solid #999;
+    border-radius:4px;
+}
+
+/* dark mode edit input */
+.dark .editInput{
+    background:#2f3647;
+    color:white;
+    border-color:#555;
+}
+
+/* calendar icon and date input side by side */
+.dateBox{
+    display:flex;
+    gap:6px;
+    align-items:center;
+}
+
+/* blue color for calendar button */
+#calendarBtn{
+    background:#4a6fa5;
+}
+
+/* dark mode calendar button */
+.dark #calendarBtn{
+    background:#5b7fc1;
+}
+
+/* hidden native date picker */
+#realDate{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+}

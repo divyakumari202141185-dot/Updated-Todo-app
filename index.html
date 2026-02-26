@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- page title -->
+<title>Todo App</title>
+<!-- link to external stylesheet -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- main container -->
+<div class="container">
+
+    <!-- app heading -->
+    <h2>Todo List 📝</h2>
+
+<!-- input section for adding new tasks -->
+    <div class="inputSection">
+        <!-- text input for task name -->
+        <input id="taskInput" type="text" placeholder="Enter task" maxlength="30">
+
+        <!-- date box -->
+        <div class="dateBox">
+            <!-- manual date input in dd-mm-yyyy -->
+            <input id="dateInput" type="text" placeholder="Due date (dd-mm-yyyy)">
+            <!-- button to open calender -->
+            <button type="button" id="calendarBtn">📅</button>
+            <!-- hidden native date input used by calender button -->
+            <input id="realDate" type="date">
+        </div>
+
+        <!-- button to add task to the list -->
+        <button onclick="addTask()">Add</button>
+    </div>
+
+    <!-- filter button section -->
+    <div class="filterSection">
+        <!-- show all tasks -->
+        <button onclick="filterTasks('all')" id="f-all">All</button>
+        <!-- show only pending tasks -->
+        <button onclick="filterTasks('pending')" id="f-pending">Pending</button>
+        <!-- show only completed tasks -->
+        <button onclick="filterTasks('completed')" id="f-completed">Completed</button>
+        <!-- toggle for dark and light mode -->
+        <button onclick="toggleMode()" id="modeBtn">Dark</button>
+    </div>
+
+    <!-- task list display area -->
+    <div class="taskContainer">
+        <!-- task inserted dynamically here by javascript -->
+        <ul id="taskList"></ul>
+    </div>
+
+</div>
+
+<!-- link to external javascript -->
+<script src="script.js"></script>
+</body>
+</html>
